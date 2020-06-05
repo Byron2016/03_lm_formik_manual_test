@@ -7,6 +7,8 @@
 	- TITULO: Tutorial Formik según MANUAL
 	- REFERENCIAS
 		- https://jaredpalmer.com/formik/docs/tutorial
+		- Grupo discución react
+			- https://discord.com/invite/cU6MCve
 		
 	- PASOS
 		- npx create-react-app 03_lm_formik_manual_test
