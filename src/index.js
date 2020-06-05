@@ -9,7 +9,7 @@ const Root = (
     <Switch>
       <Route path="/tic_toc" component={TicToc} />
       <Route path="/newsletter" component={NewsLetter} />
-      <Redirect from="/" to="/tic_toc" />
+      <Redirect from="/" to="/newsletter" />
     </Switch>
   </BrowserRouter>
 );
