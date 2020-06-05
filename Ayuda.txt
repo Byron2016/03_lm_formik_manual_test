@@ -1,0 +1,14 @@
+    ***************************************************************
+    **                                                           **
+    **                03_lm_formik_manual_test                   **
+    **                                                           **
+    ***************************************************************
+- 03_lm_formik_manual_test
+	- TITULO: Tutorial Formik según MANUAL
+	- REFERENCIAS
+		- https://jaredpalmer.com/formik/docs/tutorial
+		
+	- PASOS
+		- npx create-react-app 03_lm_formik_manual_test
+		- 
+
