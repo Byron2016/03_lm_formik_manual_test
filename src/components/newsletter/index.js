@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik } from "formik";
+import { Formik, Field, Form, ErrorMessage, FormikProvider } from "formik";
 import * as Yup from "yup";
 import "./style.scss";
 
@@ -23,52 +23,37 @@ const SignupForm = () => {
         }, 400);
       }}
     >
-      {(formik) => (
-        <form onSubmit={formik.handleSubmit}>
-          <div className="row">
-            <label htmlFor="firstName">First Name</label>
-            <input
-              id="firstName"
-              name="firstName"
-              type="text"
-              className="input"
-              {...formik.getFieldProps("firstName")}
-            />
-            {formik.touched.firstName && formik.errors.firstName ? (
-              <div className="error">{formik.errors.firstName}</div>
-            ) : null}
-          </div>
-          <div className="row">
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              id="lastName"
-              name="lastName"
-              type="text"
-              className="input"
-              {...formik.getFieldProps("lastName")}
-            />
-            {formik.touched.lastName && formik.errors.lastName ? (
-              <div className="error">{formik.errors.lastName}</div>
-            ) : null}
-          </div>
-          <div className="row">
-            <label htmlFor="email">Email Address</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              className="input"
-              {...formik.getFieldProps("email")}
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="error">{formik.errors.email}</div>
-            ) : null}
-          </div>
-          <button type="submit" className="submit">
-            Submit
-          </button>
-        </form>
-      )}
+      <Form>
+        <div className="row">
+          <label htmlFor="firstName">First Name</label>
+          <Field
+            name="firstName"
+            type="text"
+            className="input"
+            placeholder="Nombre de pila"
+          />
+          <ErrorMessage name="firstName">
+            {(message) => <div className="error">{message}</div>}
+          </ErrorMessage>
+        </div>
+        <div className="row">
+          <label htmlFor="lastName">Last Name</label>
+          <Field name="lastName" type="text" className="input" />
+          <ErrorMessage name="lastName">
+            {(message) => <div className="error">{message}</div>}
+          </ErrorMessage>
+        </div>
+        <div className="row">
+          <label htmlFor="email">Email Address</label>
+          <Field name="email" type="email" className="input" />
+          <ErrorMessage name="email">
+            {(message) => <div className="error">{message}</div>}
+          </ErrorMessage>
+        </div>
+        <button type="submit" className="submit">
+          Submit
+        </button>
+      </Form>
     </Formik>
   );
 };
